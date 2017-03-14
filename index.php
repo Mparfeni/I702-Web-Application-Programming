@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="description" content="Introduction to this guy's website">
-    <title>This goes into the titlebar</title>
+    <title>Mark shop</title>
     <link rel="css/style.css" type="text/css"/>
     <script type="text/javascript" src="js/main.js"></script>
     <meta name="viewport" content="width=device-width, user-scalable=no"/><!-- Disable zoom on smartphone -->

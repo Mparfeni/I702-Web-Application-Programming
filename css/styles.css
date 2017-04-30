@@ -88,36 +88,47 @@ footer {
 	margin: auto;
 	height: 90px;
 }
+footer h3 {
+	font: 14px 'Oswald', sans-serif;
+	color: #fff;
+	border-bottom: 1px solid #919191;
+	margin: 0 0 10px 0;
+}
 footer a {
 	color: #dbdbdb;
 }
 #sitemap {
 	width: 150px;
 	float: left;
-	margin-bottom: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	margin-left: 20px;
 	padding-right: 15px;
 }
+
 #sitemap div {
 	display: inline-block;
 }
+
+#sitemap div + div {
+	margin-left: 40px;
+}
+
 #sitemap a {
 	display: block;
 	text-decoration: none;
 	font-size: 12px;
 	margin-bottom: 5px;
 }
+
 #sitemap a:hover {
 	text-decoration: underline;
 }
-#sitemap div {
-	display: inline-block;
-}
-#sitemap div + div {
-	margin-left: 40px;
-}
+
 #social {
-  display: inline-block;
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	margin-left: 200px;
 	width: 130px;
 }

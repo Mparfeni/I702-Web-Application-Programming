@@ -73,3 +73,42 @@ h1 {
 	margin: 0;
 	padding: 0 10px;
 }
+footer {
+	background: #7e7e7e;
+	color: #dbdbdb;
+	font-size: 11px;
+}
+
+#footer {
+	max-width: 960px;
+	margin: auto;
+	padding: 10px 0;
+	height: 90px;
+}
+footer a {
+	color: #dbdbdb;
+}
+#sitemap {
+	width: 150px;
+	float: left;
+	margin-left: 20px;
+	padding-right: 15px;
+}
+#sitemap div {
+	display: inline-block;
+}
+#sitemap a {
+	display: block;
+	text-decoration: none;
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+#sitemap a:hover {
+	text-decoration: underline;
+}
+#sitemap div {
+	display: inline-block;
+}
+#sitemap div + div {
+	margin-left: 40px;
+}

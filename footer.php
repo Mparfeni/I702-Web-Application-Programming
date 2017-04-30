@@ -1,4 +1,0 @@
-<footer>
-      Footer goes here
-    </footer>
-    

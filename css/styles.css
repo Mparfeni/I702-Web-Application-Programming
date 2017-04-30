@@ -74,6 +74,10 @@ h1 {
 	padding: 0 10px;
 }
 footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+  left: 0;
 	background: #7e7e7e;
 	color: #dbdbdb;
 	font-size: 11px;
@@ -82,7 +86,6 @@ footer {
 #footer {
 	max-width: 960px;
 	margin: auto;
-	padding: 10px 0;
 	height: 90px;
 }
 footer a {
@@ -91,6 +94,7 @@ footer a {
 #sitemap {
 	width: 150px;
 	float: left;
+	margin-bottom: 20px;
 	margin-left: 20px;
 	padding-right: 15px;
 }

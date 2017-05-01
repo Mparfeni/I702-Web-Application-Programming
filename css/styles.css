@@ -1,7 +1,7 @@
 body {
 	color: #8f8f8f;
 	font: 12px Tahoma, sans-serif;
-	background-color: #f8f8f8;
+  background: url(../images/bg.png);
 	border-top: 5px solid #7e7e7e;
 	margin: 0;
 }
@@ -9,7 +9,6 @@ button {
 	color: #fff;
 	background-color: #29c5e6;
 	border: none;
-	margin-left: 10px;
 	height: 80px;
 	font-family: 'Oswald', sans-serif;
 }
@@ -19,6 +18,10 @@ p {
 #wrapper {
 	max-width: 960px;
 	margin: auto;
+}
+nav {
+	background: #f3f3f3;
+	border: 1px solid #e7e7e7;
 }
 header {
 	padding: 20px 0;
@@ -58,12 +61,20 @@ nav li {
 	padding-left: 20px;
 }
 
-h1 {
+h2 {
 	display: inline-block;
 	color: #7e7e7e;
 	font: 40px/40px 'Oswald', sans-serif;
 	background: url(../images/bg.png);
-	margin: 0px 0px 40px 130px;
+	margin: 0;
+	padding: 0 10px;
+}
+h1 {
+	display: inline-block;
+	color: #7e7e7e;
+	font: 40px/40px 'Oswald', sans-serif;
+	background-color: #f8f8f8;
+	margin: -30px 0px 20px 130px;
 	padding: 30px 10px;
 }
 footer {
@@ -184,14 +195,14 @@ a {
   transition: .5s ease;
 }
 a:hover {
-  color: #179b77;
+  color: #29c5e6;
 }
 
 .form {
-  background: @grey;
+	background-color: #f8f8f8;
   padding: 40px;
   max-width: 600px;
-  margin: 40px auto;
+  margin: 20px 180px 60px 180px;
   border-radius: 4px;
   box-shadow: 0 2px 7px 2px rgba(19, 35, 47, 0.3);
 }
@@ -262,7 +273,7 @@ label.active .req {
 }
 
 label.highlight {
-  color: #ffffff;
+  color: #7e7e7e;
 }
 
 input, textarea {
@@ -274,7 +285,7 @@ input, textarea {
   background: none;
   background-image: none;
   border: 1px solid #a0b3b0;
-  color: #ffffff;
+  color: #424242;
   border-radius: 0;
   -webkit-transition: border-color .25s ease, box-shadow .25s ease;
   transition: border-color .25s ease, box-shadow .25s ease;

@@ -19,17 +19,54 @@
 		<nav>
 			<ul class="top-menu">
 				<li><a href="/home/">HOME</a></li>
-				<li class="active">ABOUT US</a></li>
-		    <li><a href="products.php">PRODUCTS</a></li>
+				<li><a href="index.html">ABOUT US</a></li>
+        <li class="active">PRODUCTS</li>
 		    <li><a href="/contact/">CONTACT</a></li>
 			  <li><a href="login.html">LOGIN</a></li>
 			</ul></nav>
 		<div id="heading">
-				<h2>ABOUT US</h2>
+				<h2>PRODUCTS</h2>
 		</div>
-		<aside></aside>
-		<section></section>
+		<aside>
+      <nav>
+        <ul class="aside-menu">
+          <li class="active">LAPTOPS</li>
+          <li><a href="/donec/">SMARTPHONES</a></li>
+		      <li><a href="/vestibulum/">GAMECONSOLES</a></li>
+          <li><a href="/phasellus/">DRONES</a></li>
+          <li><a href="/cras/">OTHER</a></li>
+        </ul>
+      </nav>
+    </aside>
+		<section>
+			<?php
+require_once "config.php";
+$conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+if ($conn->connect_error)
+  die("Connection to database failed:" .
+    $conn->connect_error);
+$conn->query("set names utf8");
+?>
+<?php
+	 $results = $conn->query(
+		 "SELECT id,name,price FROM Mark_shop_product;");
+
+	 while ($row = $results->fetch_assoc()) {
+		 ?>
+			 <li>
+				 <a href="description.php?id=<?=$row['id']?>">
+					 <?=$row["name"]?></a>
+					 <?=$row["price"]?>EUR
+			 </li>
+		 <?php
+	 }
+
+	 $conn->close();
+
+ ?>
+    </section>
 	</div>
+	
 	<footer>
 		<div id="footer">
 			<div id="sitemap">

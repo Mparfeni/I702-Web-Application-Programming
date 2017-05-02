@@ -4,6 +4,7 @@ body {
   background: url(../images/bg.png);
 	border-top: 5px solid #7e7e7e;
 	margin: 0;
+	min-height: 100%;
 }
 button {
 	color: #fff;
@@ -77,10 +78,17 @@ h1 {
 	margin: -30px 0px 20px 130px;
 	padding: 30px 10px;
 }
+.hFooter {
+height: 120px;
+}
+
 footer {
+	position: static;
+	bottom: 0px;
 	background: #7e7e7e;
 	color: #dbdbdb;
 	font-size: 11px;
+	width: 100%;
 }
 
 #footer {
@@ -96,6 +104,31 @@ footer h3 {
 }
 footer a {
 	color: #dbdbdb;
+}
+aside {
+	float: left;
+	width: 250px;
+}
+section {
+	margin-left: 280px;
+	padding-bottom: 50px;
+}
+.aside-menu li {
+	font-weight: 300;
+	list-style-type: square;
+	border-top: 1px solid #e7e7e7;
+}
+
+.aside-menu li:first-child {
+	border: none;
+}
+
+.aside-menu li.active {
+	color: #29c5e6;
+}
+
+.aside-menu a {
+	color: #8f8f8f;
 }
 #sitemap {
 	width: 150px;

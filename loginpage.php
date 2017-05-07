@@ -18,11 +18,7 @@
 		</header>
 		<nav>
 			<ul class="top-menu">
-				<li><a href="/home/">HOME</a></li>
-				<li><a href="index.html">ABOUT US</a></li>
-		    <li><a href="products.php">PRODUCTS</a></li>
-		    <li><a href="/contact/">CONTACT</a></li>
-			  <li class="active">LOGIN</li>
+				 <?php include "navbar.php"; ?>
 			</ul></nav>
 		<div id="heading">
 				<h2>Login</h2>
@@ -59,9 +55,9 @@
 
 		          <div class="field-wrap">
 		            <label>
-		              Email Address<span class="req">*</span>
+		              Username<span class="req">*</span>
 		            </label>
-		            <input type="email" name='email' required autocomplete="off"/>
+		            <input type="text" name='username' required autocomplete="off"/>
 		          </div>
 
 		          <div class="field-wrap">
@@ -84,9 +80,9 @@
 
 		            <div class="field-wrap">
 		            <label>
-		              Email Address<span class="req">*</span>
+		              Username<span class="req">*</span>
 		            </label>
-		            <input type="email" name='email' required autocomplete="off"/>
+		            <input type="text" name='username' required autocomplete="off"/>
 		          </div>
 
 		          <div class="field-wrap">

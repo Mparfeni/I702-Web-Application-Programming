@@ -18,11 +18,7 @@
 		</header>
 		<nav>
 			<ul class="top-menu">
-				<li><a href="/home/">HOME</a></li>
-				<li class="active">ABOUT US</a></li>
-		    <li><a href="products.php">PRODUCTS</a></li>
-		    <li><a href="/contact/">CONTACT</a></li>
-			  <li><a href="login.html">LOGIN</a></li>
+				 <?php include "navbar.php"; ?>
 			</ul></nav>
 		<div id="heading">
 				<h2>ABOUT US</h2>

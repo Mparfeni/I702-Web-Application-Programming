@@ -18,11 +18,7 @@
 		</header>
 		<nav>
 			<ul class="top-menu">
-				<li><a href="/home/">HOME</a></li>
-				<li><a href="index.html">ABOUT US</a></li>
-        <li class="active">PRODUCTS</li>
-		    <li><a href="/contact/">CONTACT</a></li>
-			  <li><a href="login.html">LOGIN</a></li>
+				<?php include "navbar.php"; ?>
 			</ul></nav>
 		<div id="heading">
 				<h2>PRODUCTS</h2>
@@ -40,33 +36,36 @@
     </aside>
 		<section>
 			<?php
-require_once "config.php";
-$conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
-if ($conn->connect_error)
-  die("Connection to database failed:" .
-    $conn->connect_error);
-$conn->query("set names utf8");
-?>
-<?php
-	 $results = $conn->query(
-		 "SELECT id,name,price FROM Mark_shop_product;");
+			require_once "config.php";
+			$conn = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+			if ($conn->connect_error)
+			die("Connection to database failed:" .
+			$conn->connect_error);
+			$conn->query("set names utf8");
+			?>
+			<?php
+			$results = $conn->query(
+			"SELECT id,name,price,picture FROM Mark_shop_product;");
+			while ($row = $results->fetch_assoc()) {
+			?>
+			<div class="team-row">
+				<figure>
+					<img src="<?=$row["picture"]?>" width="220" height="150" alt="">
+					<figcaption><?=$row["name"]?><span><?=$row["price"]?>EUR</span></figcaption>
+				</figure>
+				<figure>
+					<img src="images/sample.png" width="220" height="150" alt="">
+					<figcaption><?=$row["name"]?><span><?=$row["price"]?>EUR</span></figcaption>
+				</figure>
+			</div>
+			<?php
+			}
 
-	 while ($row = $results->fetch_assoc()) {
-		 ?>
-			 <li>
-				 <a href="description.php?id=<?=$row['id']?>">
-					 <?=$row["name"]?></a>
-					 <?=$row["price"]?>EUR
-			 </li>
-		 <?php
-	 }
+			$conn->close();
 
-	 $conn->close();
-
- ?>
-    </section>
+			?>
+		</section>
 	</div>
-	
 	<footer>
 		<div id="footer">
 			<div id="sitemap">

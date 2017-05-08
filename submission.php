@@ -12,7 +12,7 @@ $statement = $conn->prepare(
     `password`,
     `first_name`,
     `last_name`)
-VALUES (?, PASSWORD(?), ?, ?)");
+VALUES (?, ?, ?, ?)");
 
 # whenever you get "call to a member function ... on a non-object" this means something
 # is failing **before** that line so you have to manually check for errors like this:

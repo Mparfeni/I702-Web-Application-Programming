@@ -94,7 +94,6 @@
 			</div>
 		</div>
 		<div id="footer-logo"></div>
-	</div>
-</footer>
+	</footer>
 </body>
 </html>

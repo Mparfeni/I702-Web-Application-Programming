@@ -64,8 +64,7 @@ Our site on average visits more than 2 million unique visitors per day, and this
 				<a href="/rss/" class="social-icon-small rss"></a>
 			</div>
 		</div>
-		<div id="footer-logo"></div>
-	</div>
-</footer>
+    <div id="footer-logo"></div>
+  </footer>
 </body>
 </html>

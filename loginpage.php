@@ -67,7 +67,7 @@
 		            <input type="password" name='password' required autocomplete="off"/>
 		          </div>
 
-		          <button type="submit" class="button button-block"/>Get Started</button>
+		          <button type="submit" class="button button-block">Get Started</button>
 
 		          </form>
 
@@ -76,7 +76,7 @@
 		        <div id="login">
 		          <h1>Welcome Back!</h1>
 
-		          <form action="login.php" method="POST">
+		          <form name="login" action="login.php" onsubmit="return validateForm()" method="POST">
 
 		            <div class="field-wrap">
 		            <label>
@@ -89,12 +89,12 @@
 		            <label>
 		              Password<span class="req">*</span>
 		            </label>
-		            <input type="password" name='password' required autocomplete="off"/>
+		            <input type="password" name='password'/>
 		          </div>
 
 		          <p class="forgot"><a href="#">Forgot Password?</a></p>
 
-		          <button class="button button-block"/>Log In</button>
+		          <button type="submit" class="button button-block">Log In</button>
 
 		          </form>
 
@@ -105,6 +105,7 @@
 		</div> <!-- /form -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src='js/login.js'></script>
+		<script src='js/checkinput.js'></script>
 		<div class="hFooter"></div>
 	</div>
 	<footer>
@@ -135,7 +136,6 @@
 			</div>
 		</div>
 		<div id="footer-logo"></div>
-	</div>
-</footer>
+	</footer>
 </body>
 </html>

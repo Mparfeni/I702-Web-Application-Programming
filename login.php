@@ -1,6 +1,8 @@
 <?php
 include_once("config.php");
-session_start(); // Starting Session
+if(!isset($_SESSION)){
+ session_start();
+}// Starting Session
 $error=''; // Variable To Store Error Message
 if (empty($_POST['username']) || empty($_POST['password'])) {
 $error = "Username or Password is invalid";

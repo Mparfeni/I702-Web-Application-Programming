@@ -25,11 +25,13 @@ $statement->bind_param("ssss",
     $_POST["last_name"]);
 
 if ($statement->execute()) {
-    echo 'Registration was successful!<a href="http://enos.itcollege.ee/~mparfeni/index.php">Back to main page</a';
+    echo '<script>alert("Registration was successful")</script>';
+    echo '<script>window.location="loginpage.php"</script>';
 } else {
     if ($statement->errno == 1062) {
        // This will result in 200 OK
-       echo "This user is already registered";
+       echo '<script>alert("This user is already registered")</script>';
+       echo '<script>window.location="loginpage.php"</script>';
     } else {
        // This will result in 500 Internal server error
        die("Execute failed: (" .

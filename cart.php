@@ -47,7 +47,7 @@ if(isset($_GET["action"]))
 		<div style="clear:both"></div>
 		<br />
 		<h3>Order Details</h3>
-		<div class="table-responsive">
+		<div style="margin-bottom: 200px" class="table-responsive">
 			<table class="table table-bordered">
 				<tr>
 					<th width="40%">Item Name</th>

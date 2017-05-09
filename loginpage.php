@@ -14,6 +14,9 @@
 <body>
 	<div id="wrapper">
 		<header>
+			<form name="cart">
+				<a href="cart.php"><img src="images/cart.png" width="45" height="45" alt="Cart logo"></a>
+			</form>
 			<a href="/"><img src="images/logo.png" alt="Mark's shop logo"></a>
 		</header>
 		<nav>

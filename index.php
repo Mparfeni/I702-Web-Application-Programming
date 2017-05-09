@@ -36,7 +36,7 @@ We will help you to choose, do not let boredom!
 Our task is not only to simply sell the right product, but also to inform and educate the buyer. To do this, we shoot video reviews of new products, prepare articles and news. Armed with comprehensive information about an interesting device and its main competitors, you can independently make a measured decision to buy exactly the product that you need.
 Our site on average visits more than 2 million unique visitors per day, and this number continues to grow. Not stopping at what has been achieved, we continue to build momentum, striving to become the best online supermarket in the country - a place where you can choose and purchase any goods - consciously, inexpensively and conveniently.</p>
 <figure>
-	<img src="images/sample.png" width="600" height="350" alt="">
+	<img src="images/sample.png" width="600" height="350" alt="Photo of Mark's shop">
 </figure>
 		</section>
 	</div>
@@ -46,13 +46,11 @@ Our site on average visits more than 2 million unique visitors per day, and this
 				<h3>SITEMAP</h3>
 				<div>
 					<a href="/home/">Home</a>
- 		      <a href="/about/">About</a>
- 		      <a href="/services/">Services</a>
+ 		      <a href="index.php">About</a>
 				</div>
 				<div>
-					<a href="/partners/">Partners</a>
-					<a href="/customers/">Support</a>
-					<a href="/contact/">Contact</a>
+					<a href="products.php">Products</a>
+					<a href="loginpage.php">Login</a>
 				</div>
 			</div>
 			<div id="social">

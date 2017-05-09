@@ -50,11 +50,11 @@ if(isset($_GET["action"]))
 		<div style="margin-bottom: 200px" class="table-responsive">
 			<table class="table table-bordered">
 				<tr>
-					<th width="40%">Item Name</th>
-          <th width="10%">Quantity</th>
-          <th width="20%">Price</th>
-          <th width="15%">Total</th>
-          <th width="5%">Action</th>
+					<th style="width:40%;">Item Name</th>
+          <th style="width:10%;">Quantity</th>
+          <th style="width:20%;">Price</th>
+          <th style="width:15%;">Total</th>
+          <th style="width:5%;">Action</th>
 				</tr>
 				<?php
 				if(!empty($_SESSION["shopping_cart"]))
@@ -91,13 +91,11 @@ if(isset($_GET["action"]))
 				<h3>SITEMAP</h3>
 				<div>
 					<a href="/home/">Home</a>
- 		      <a href="/about/">About</a>
- 		      <a href="/services/">Services</a>
+ 		      <a href="index.php">About</a>
 				</div>
 				<div>
-					<a href="/partners/">Partners</a>
-					<a href="/customers/">Support</a>
-					<a href="/contact/">Contact</a>
+					<a href="products.php">Products</a>
+					<a href="loginpage.php">Login</a>
 				</div>
 			</div>
 			<div id="social">

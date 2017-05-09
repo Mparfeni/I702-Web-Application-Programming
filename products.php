@@ -57,7 +57,7 @@ if(isset($_POST["add_to_cart"]))
 			<form name="cart">
 				<a href="cart.php"><img src="images/cart.png" width="45" height="45" alt="Cart logo"></a>
 			</form>
-			<a href="/"><img src="images/logo.png" alt="Mark's shop logo"></a>
+			<a href="index.php"><img src="images/logo.png" alt="Mark's shop logo"></a>
 		</header>
 		<nav>
 			<ul class="top-menu">
@@ -90,7 +90,7 @@ if(isset($_POST["add_to_cart"]))
 						?>
 						<div class="col-md-4">
 							<form method="post" action="products.php?action=add&id=<?php echo $row["id"]; ?>">
-								<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
+								<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px; text-align:center;">
 									<img src="<?php echo $row["picture"]; ?>" width="500" height="380" alt="Product photo" class="img-responsive" /><br />
 									<h4 class="text-info"><?php echo $row["name"]; ?></h4>
 									<h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>
@@ -113,15 +113,13 @@ if(isset($_POST["add_to_cart"]))
 		<div id="footer">
 			<div id="sitemap">
 				<h3>SITEMAP</h3>
-				<div>
+        <div>
 					<a href="/home/">Home</a>
- 		      <a href="/about/">About</a>
- 		      <a href="/services/">Services</a>
+ 		      <a href="index.php">About</a>
 				</div>
 				<div>
-					<a href="/partners/">Partners</a>
-					<a href="/customers/">Support</a>
-					<a href="/contact/">Contact</a>
+					<a href="products.php">Products</a>
+					<a href="loginpage.php">Login</a>
 				</div>
 			</div>
 			<div id="social">

@@ -1,3 +1,58 @@
+<?php
+include_once("config.php");
+if (session_id() === "") {
+   session_start();
+}
+$connection = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+if(isset($_POST["add_to_cart"]))
+{
+		if(isset($_SESSION["shopping_cart"]))
+		{
+				 $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");
+				 if(!in_array($_GET["id"], $item_array_id))
+				 {
+							$count = count($_SESSION["shopping_cart"]);
+							$item_array = array(
+									 'item_id'               =>     $_GET["id"],
+									 'item_name'               =>     $_POST["hidden_name"],
+									 'item_price'          =>     $_POST["hidden_price"],
+									 'item_quantity'          =>     $_POST["quantity"]
+							);
+							$_SESSION["shopping_cart"][$count] = $item_array;
+				 }
+				 else
+				 {
+							echo '<script>alert("Item Already Added")</script>';
+							echo '<script>window.location="products.php"</script>';
+				 }
+		}
+		else
+		{
+				 $item_array = array(
+							'item_id'               =>     $_GET["id"],
+							'item_name'               =>     $_POST["hidden_name"],
+							'item_price'          =>     $_POST["hidden_price"],
+							'item_quantity'          =>     $_POST["quantity"]
+				 );
+				 $_SESSION["shopping_cart"][0] = $item_array;
+		}
+}
+if(isset($_GET["action"]))
+{
+		if($_GET["action"] == "delete")
+		{
+				 foreach($_SESSION["shopping_cart"] as $keys => $values)
+				 {
+							if($values["item_id"] == $_GET["id"])
+							{
+									 unset($_SESSION["shopping_cart"][$keys]);
+									 echo '<script>alert("Item Removed")</script>';
+									 echo '<script>window.location="products.php"</script>';
+							}
+				 }
+		}
+}
+?>
 <!doctype html>
 <html>
 <head>
@@ -14,6 +69,9 @@
 <body>
 	<div id="wrapper">
 		<header>
+			<form name="cart">
+				<a href="cart.php"><img src="images/cart.png" width="45" height="45" alt="Cart logo"></a>
+			</form>
 			<a href="/"><img src="images/logo.png" alt="Mark's shop logo"></a>
 		</header>
 		<nav>
@@ -35,35 +93,35 @@
       </nav>
     </aside>
 		<section>
-			<?php
-			require_once "config.php";
-			$conn = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
-			if ($conn->connect_error)
-			die("Connection to database failed:" .
-			$conn->connect_error);
-			$conn->query("set names utf8");
-			?>
-			<?php
-			$results = $conn->query(
-			"SELECT id,name,price,picture FROM Mark_shop_product;");
-			while ($row = $results->fetch_assoc()) {
-			?>
-			<div class="team-row">
-				<figure>
-					<img src="<?=$row["picture"]?>" width="220" height="150" alt="">
-					<figcaption><?=$row["name"]?><span><?=$row["price"]?>EUR</span></figcaption>
-				</figure>
-				<figure>
-					<img src="images/sample.png" width="220" height="150" alt="">
-					<figcaption><?=$row["name"]?><span><?=$row["price"]?>EUR</span></figcaption>
-				</figure>
+			<br />
+			<div class="container" style="width:600px;">
+				<?php
+				$query = "SELECT * FROM Mark_shop_product ORDER BY id ASC";
+				$result = mysqli_query($connection, $query);
+				if(mysqli_num_rows($result) > 0)
+				{
+					while($row = mysqli_fetch_array($result))
+					{
+						?>
+						<div class="col-md-4">
+							<form method="post" action="products.php?action=add&id=<?php echo $row["id"]; ?>">
+								<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
+									<img src="<?php echo $row["picture"]; ?>" width="500" height="380" alt="Product photo" class="img-responsive" /><br />
+									<h4 class="text-info"><?php echo $row["name"]; ?></h4>
+									<h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>
+  								<input type="text" name="quantity" class="form-control" value="1" />
+									<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
+									<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+									<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
+								</div>
+							</form>
+						</div>
+						<?php
+					}
+				}
+				?>
 			</div>
-			<?php
-			}
-
-			$conn->close();
-
-			?>
+			<br />
 		</section>
 	</div>
 	<footer>

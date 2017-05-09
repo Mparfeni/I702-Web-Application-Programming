@@ -27,6 +27,9 @@ nav {
 header {
 	padding: 20px 0;
 }
+form[name="cart"] {
+	float: right;
+}
 nav a {
 	text-decoration: none;
 }
@@ -101,6 +104,9 @@ figure div {
 	font-size: 14px;
 	color: #29c5e6;
 }
+div class="table-responsive"{
+	margin-bottom: 200px;
+}
 
 .team-row figure {
 	margin-top: 20px;
@@ -153,6 +159,7 @@ section {
 	margin-left: 280px;
 	padding-bottom:240px;
 }
+
 .aside-menu li {
 	font-weight: 300;
 	list-style-type: square;
